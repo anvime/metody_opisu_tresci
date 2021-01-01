@@ -1,0 +1,36 @@
+AIDe - Polish corpus of Annotated Image Descriptions
+
+
+AIDe_ANNOTATED_DESCRIPTIONS – captions and their annotations in text format (columns separated with tabs):
+
+1) captions.csv - the raw captions of 1000 images (AIDe_PICTURES) selected from the Flickr8k Dataset (Hodosh et al., 2013). The first column contains the picture identification number (Picture_id) and the second column is the Filckr8k id of the picture (Picture_orig_name). The captions written by two authors are in the last two columns (3. and 4.).
+
+2) classification.csv - classification of images (AIDe_PICTURES). The first column contains the picture identification number (Picture_id) and the second column is the Filckr8k id of the picture (Picture_orig_name). There are three class types: Event (the 3rd column), Entities (i.e. participants and artefacts, the 5th column), and Out_In (i.e. general location, the 7th column). The classes within these groups corresponds to WordNet hyperonyms.
+
+- Event classes: carry, climb, consume, dance, fish, fly, game, go, jump, kiss, lie, photograph, play, ride, run, sing, sit, skate, smoke, stand, swim, swing, walk, watch
+- Entity classes: animal, artifact, food, instrument, person, vehicle
+- Out_In classes: inside, outside
+
+The game class is further divided into 8 subclasses (Event_hypon, i.e. Event hyponyms): baseball, basketball, cricket, field hockey, football, ice hockey, rugby, soccer.
+
+Some of the~classes within Entity group are further divided into the following subclasses (Entity_hypon, i.e. Entity hyponyms): aircraft, aquatic mammal, athlete, ball, bicycle, bike, bird, boat, car, cat, child, dog, equipment, fish, guitar, hoofed mammal, horse, insect, kayak, mammal, man, motorcycle, percussion instrument, racket, reptile, roller skate, scooter, skate, skateboard, ski, sledge, slide, snowboard, string, surfboard, trampoline, weapon, wheelchair, wheeled vehicle, wind, woman.
+
+Out_In classes are sometimes specified with the following subclasses (Locat, i.e. locations): apartment, beach, court, field, ice rink, mountain, park, playground, pool, ring, shore, stadium, stairs, street, track, water
+
+3) dependencyTrees_A.conll and dependencyTrees_B.conll - tokenised and morphosyntactically analysed captions in the CoNLL format (Nivre et al., 2007). The morphosyntactic analysis consists of lemmatisation, morphosyntactic analysis and disambiguation, and dependency parsing. Captions A and B are stored as dependency trees in two files in CoNLL format with the following columns: 1 - the id of token in the sentence, 2 - token, 3 - lemma, 4 - part of speech tag, 5 - part of speech tag, 6 - morphological features, 7 - the id of token's head, 8 - the label of the dependency relation between the token and its head.
+
+4) dependencyTrees_A.conllu and dependencyTrees_B.conllu - tokenised and morphosyntactically analysed captions in the UD format (http://universaldependencies.org). The UD dependency trees are the automatic conversions of dependency trees dependencyTrees_A.conll and dependencyTrees_B.conll).
+
+5) semantic_annotations.csv - the caption pairs annotated with semantic relatedness and labels of entailment in both directions are derived from CDSCorpus (Wróblewska and Krasnowska-Kieraś, 2017). The first column contains the picture identification number (Picture_id). The captions A and B are in the second and third columns. The relatedness score (RE) and the rounded relatedness score (round(RE)) are in the fourth and fifth columns. The entailment labels  are in the sixth column (A_wrt_B, i.e. A with respect to B) and the seventh column (B_wrt_A, i.e. B with respect to A). The selected caption pairs are labelled with two entailment labels – neutral and entailment (without contradiction label).
+
+License CC BY-SA 4.0
+
+
+
+AIDe_PICTURES - 1000 images selected from the Flickr8k Dataset (Hodosh et al., 2013).
+We do not own the copyright of the images (AIDe_PICTUREs). To get images you can either apply for Flickr8k dataset on https://forms.illinois.edu/sec/1713398 or contact Alina Wróblewska (alina@ipipan.waw.pl).
+
+Literature:
+M. Hodosh, P. Young and J. Hockenmaier (2013) "Framing Image Description as a Ranking Task: Data, Models and Evaluation Metrics", Journal of Artifical Intellegence Research, Volume 47, pages 853-899, http://www.jair.org/papers/paper3994.html
+A. Wróblewska and K. Krasnowska-Kieraś (2017) "Polish evaluation dataset for compositional distributional semantics models". In Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 784–792, Association for Computational Linguistics, http://aclweb.org/anthology/P17-1073.
+Nivre, J., Hall, J., Kuebler, S., McDonald, R., Nilsson, J., Riedel, S., and Yuret, D. (2007). The CoNLL 2007 Shared Task on Dependency Parsing. In Proceedings of the CoNLL Shared Task Session of EMNLP-CoNLL 2007, pages 915–932.
